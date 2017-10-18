@@ -1,3 +1,5 @@
+  require ('console.table');
+
     const inventors = [
       { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
       { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -17,13 +19,16 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
-    const fifteenth =inventors.filter(function(inventor){
-      if(inventor.year >= 1500 && inventor.year <= 1600){
-        return true
-      }
-    });
+      // ES5 Method
+        // const fifteenth =inventors.filter(function(inventor){
+        //   if(inventor.year >= 1500 && inventor.year <= 1600){
+        //     return true
+        //   }
+        // });
+      // ES6 Method
+        const fifteenth = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1600);
 
-    console.log(fifteenth);
+    console.table(fifteenth);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
