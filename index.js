@@ -75,14 +75,20 @@
 
     // 5. Sort the inventors by years lived
       // ES5
-        const oldestInventor = inventors.sort(function(a, b) {
+        // const oldestInventor = inventors.sort(function(a, b) {
+        //   const oldGuy = a.passed - a.year;
+        //   const newGuy = b.passed - b.year;
+        //   if(oldGuy < newGuy){
+        //     return 1
+        //   } if(oldGuy > newGuy){
+        //     return -1
+        //   }
+        // });
+      // ES6
+        const oldestInventor = inventors.sort((a, b) => {
           const oldGuy = a.passed - a.year;
           const newGuy = b.passed - b.year;
-          if(oldGuy < newGuy){
-            return 1
-          } if(oldGuy > newGuy){
-            return -1
-          }
+          return oldGuy < newGuy ? 1:-1
         });
         console.table('oldestInventor', oldestInventor);
 
