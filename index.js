@@ -29,6 +29,7 @@
         const fifteenth = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1600);
 
     console.table("Inventors born in the 1500's: ", fifteenth);
+    //==========================================================================================================
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
@@ -40,6 +41,8 @@
         const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
 
         console.table("fullName", fullName);
+
+    //==========================================================================================================
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
@@ -55,6 +58,8 @@
         const oldestSort = inventors.sort((a,b) => a.year < b.year ? -1:1);
         console.table('oldestSort', oldestSort);
 
+    //==========================================================================================================
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
       // ES5
@@ -66,14 +71,32 @@
 
         console.log('total years', totalYears);
 
+    //==========================================================================================================
+
     // 5. Sort the inventors by years lived
+      // ES5
+        const oldestInventor = inventors.sort(function(a, b) {
+          const oldGuy = a.passed - a.year;
+          const newGuy = b.passed - b.year;
+          if(oldGuy < newGuy){
+            return 1
+          } if(oldGuy > newGuy){
+            return -1
+          }
+        });
+        console.table('oldestInventor', oldestInventor);
+
+    //==========================================================================================================
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+    //==========================================================================================================
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+
+    //==========================================================================================================
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
