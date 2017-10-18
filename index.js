@@ -33,9 +33,11 @@
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
       // ES5 Method
-        const fullName = inventors.map(function(inventor){
-          return (inventor.first + ' ' + inventor.last);
-        })
+        // const fullName = inventors.map(function(inventor){
+        //   return (inventor.first + ' ' + inventor.last);
+        // })
+      // ES6 Method
+        const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
 
         console.table("fullName", fullName);
 
